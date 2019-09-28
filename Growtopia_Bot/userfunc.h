@@ -694,7 +694,7 @@ void GrowtopiaBot::userInit()
 	cout << "This is bot from Growtopia Noobs." << endl;
 	cout << "Subscribe him on youtube! https://www.youtube.com/c/GrowtopiaNoobs" << endl;
 	cout << "Can be downloaded from: https://www.sethmumu.eu/" << endl;
-    connectClient("209.59.190.105", 17096);
+    connectClient("209.59.191.86", 17093);
     //connectClient("192.168.2.13", 17091);
 	window.create(sf::VideoMode(500, 300), "GT Bot!");
 	cout << flush;
