@@ -264,7 +264,8 @@ void RequestItemActivate(unsigned int item)
 	memcpy(data + 0, &ten, 1);
 	memcpy(data + 20, &item, 1);
 	SendPacketRaw(4, data, 0x38u, 0, peer, 1);
-	free(data);
+	delete[] data;
+	data = nullptr;
 }
 
 void SetAndBroadcastIconState(int netID, int state)
@@ -279,7 +280,8 @@ void SetAndBroadcastIconState(int netID, int state)
 	memcpy(data + 4, &netID, 4); // (a1+40)
 	memcpy(data + 44, &state, 4);
 	SendPacketRaw(4, data, 0x38u, 0, peer, 1);
-	free(data);
+	delete[] data;
+	data = nullptr;
 }
 
 void SendPing()
@@ -292,7 +294,8 @@ void SendPing()
 	BYTE twentytwo = 22;
 	memcpy(data + 0, &twentytwo, 1);
 	SendPacketRaw(4, data, 56, 0, peer, 1);
-	free(data);
+	delete[] data;
+	data = nullptr;
 }
 
 /*************** sender sutff **************/
@@ -695,7 +698,8 @@ cout << i << endl;
 	}
 	if (dataStruct != NULL)
 	{
-		free(dataStruct);
+		delete dataStruct;
+		dataStruct = nullptr;
 	}
 	if (!isNetIdHandled && netId!=-1)
 	{
@@ -1115,7 +1119,8 @@ void ProcessTankUpdatePacket(float someVal, EntityComponent* entityComponent, BY
             }
             cout << endl;*/
 			AtPlayerMoving(structCahce);
-			free(structCahce);
+			delete structCahce;
+			structCahce = nullptr;
 			break;
 		}
 		default:
